@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta content="width=1024" name="viewport" content="width=device-width minimum-scale=1, maximum-scale=4">
+
+  <title>ideal physics สถาบันกวดวิชาฟิสิกส์อันดับ 1</title>
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="../css/foundation.min.css">
+  <link rel="stylesheet" href="../css/app.css">
+  <link rel="stylesheet" href="../css/style1.css">
+<link rel="stylesheet" href="../css/color1.css">
+	<link rel="stylesheet" href="../css/idealup.css">
+    <link rel="stylesheet" href="../css/ui.progress-bar.css">
+  
+  <!-- Plugins CSS -->
+  <link href="../plugins/titan/css/jquery.titanlighbox.css" rel="stylesheet" type="text/css">
+     
+  <!-- Google Fonts --> 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+ 
+  <!-- Included JS Files (Compressed) -->
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/foundation.min.js"></script>
+  <script src="javascripts/modernizr.foundation.js"></script> 
+    
+  <!-- Slider Revolution JS FILES  -->
+  <script type="text/javascript" src="../plugins/slider-revolution/jquery.themepunch.plugins.min.js"></script>
+  <script type="text/javascript" src="../plugins/slider-revolution/jquery.themepunch.revolution.min.js"></script>
+  
+  <!-- Tooltips -->
+  <script type="text/javascript" src="../javascripts/jquery.tipsy.js"></script>
+  
+  <!-- CarouFredSel plugin -->
+  <script type="text/javascript"  src="../javascripts/jquery.carouFredSel-6.0.3-packed.js"></script>
+  <!-- optionally include helper plugins -->
+  <script type="text/javascript"  src="../javascripts/jquery.touchSwipe.min.js"></script>
+  
+  <!-- Titan Lightbox -->
+  <script type="text/javascript" src="../plugins/titan/js/prettify.js"></script>
+  <script type="text/javascript" src="../plugins/titan/js/jquery.titanlighbox.js"></script>
+    
+  <!-- Scripts Initialize -->
+	<script src="../javascripts/app-head.js"></script> 
+	<script src="../javascripts/slideMenu.js"></script>
+	<script src="../javascripts/slideMenu.min.js"></script>
+    <script src="../javascripts/idealup.js"></script>
+    <script src="../javascripts/progress.js"></script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+	<script type="text/javascript">
+
+		$(window).load(function(){
+		  $('#dvLoading').fadeOut(2000);
+		});
+		
+		$(document).ready(function(){
+			
+			moveinclub();
+			
+			/**
+			 * MENU OPTIONS (default values in parenthesis)
+			 * ------------
+			 * div:        Where the slide-menu will go. ("#menu-container")
+			 * controls:   Where are the controls for the menu. ("#menu-controls")
+			 * loader:     If you are using a loading graphic, the menu will hide it for you once loaded. If not,
+			 *               set it to 'false' or ''. (false)
+			 * x:          Total width of list item including margins and padding in px. (150)
+			 * y:          Total height of list item including margins and padding in px. (150)
+			 * start:      Index of <ul> to open first. (0)
+			 * speed:      Speed of all animations in ms . (300)
+			 * delay:      Delay between list item animations when transitioning in ms. (60)
+			 * easing:     Type of easing to use for list item animations, use '' for no easing effect. ('')
+			 *               FYI - "easeOutBackSmall" is a custom addition I made for this demo, it is not included in the
+			 *               standard set of easing animations.
+			 * easeIn:     Type of easing to use for initial drop-in animation, use '' for none. ('')
+			 *               This demo includes the jQuery easing plugin: http://gsgd.co.uk/sandbox/jquery/easing/
+			 *               Supported easing methods in the plugin are listed and demoed at the above url.
+			 * preloadAll: Wait for all menu images to load before animating in, or just the first set? (false)
+			 *               By default, with this set to false, the menu will wait until all images in the first menu set are
+			 *               loaded before the beginning animation is fired. If set to true, it will wait for all menu images to load.
+			 */
+		
+			/*var options = {
+				div: "#menu-icontainer",
+				controls: "#main-imenu",
+				loader: "#loading",
+				x: 150,
+				y: 200,
+				easing: "easeOutBackSmall",
+				easeIn: "easeOutBack",
+				preloadAll: true
+			};
+			
+
+			
+			var menu = new slideMenu(options);*/
+			
+			/*
+				The menu will wait until images are loaded before initializing, see "preloadAll" above.
+				If you want to wait until EVERYTHING on the page is loaded, simply do this:
+				
+				$(window).load(function(){
+					var menu = new slideMenu(options);
+				});
+			*/
+		
+			
+			/*----------------------------------------------------------------------------------
+			 * Demo stuff, not required for menu to work
+			 *---------------------------------------------------------------------------------*/
+			//var auto = false, x, inc;
+			
+			
+		
+			
+				
+		});
+		</script>
+
+</head>
+<body>
+<div id="dvLoading"></div>
+<!-- Region 1 Wrap -->
+
+
+
+<!-- Region 2 Wrap -->
+
+<div class="container region2wrap">
+  
+	<div class="row">
+		
+	</div>
+    
+</div>
+  
+<!-- End Region 2 Wrap -->
+
+<!-- Region 3 Wrap -->
+
+<div class="container region3wrap course">  
+	<div class="row">
+    	<!-- Progress bar -->
+                        <div id="progress_bar" class="ui-progress-bar ui-container">
+                          <div class="ui-progress" style="width: 79%;">
+                            <span class="ui-label" style="display:none;">Processing <b class="value">79%</b></span>
+                          </div>
+                        </div>
+		<!-- /Progress bar -->
+    	<div class="onecol">
+    		<table id="ans_table1" width="100%" border="1" cellspacing="5" cellpadding="5">
+              <tr>
+                <td><a href="answer/answer-basic-physics.html" target="_parent"><img src="../images/stories/icon-physics/basics_icon.png"></a></td>
+                <td><a href="answer/answer-entrance-physics.html" target="_parent"><img src="../images/stories/icon-physics/entrance_icon.png"></a></td>
+                <td><a href="answer/answer-advance-physics.html" target="_parent"><img src="../images/stories/icon-physics/advance_icon.png"></a></td>
+                <td><a href="answer/answer-engineering-physics.html" target="_parent"><img src="../images/stories/icon-physics/engineer_icon.png"></a></td>
+                <td><img src="../images/stories/icon-physics/quaota_icon.png"></td>
+              </tr>
+            </table>
+
+
+        </div>    
+    </div>
+</div>
+  
+<!-- End Region 3 Wrap -->
+
+
+
+
+
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="javascripts/jquery.js"></script>
+  
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="javascripts/jquery.placeholder.js"></script>
+  
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  
+  -->
+  
+<!-- Back To Top -->
+  <a href="#" class="scrollup">Scroll</a>
+<!-- End Back To Top -->
+  
+<!-- Reveal Modal --> 
+  <div id="Login" class="reveal-modal login-modal">
+  
+    <h2>BOOKING</h2>
+    <p>Please login using your credentials recived by email when you register.</p>
+    	<form>
+  			<label>Username</label>  
+  			<input type="text" placeholder="UserName@TouchM.com" />
+  
+  			<label>Password</label>
+  			<input type="text" placeholder="insert password" />
+  
+  			<p class="right"><a href="http://forums.orpalis.com/ucp.php?mode=sendpassword">I forgot my password</a> | <a href="http://forums.orpalis.com/ucp.php?mode=resend_act">Resend activation e-mail</a></p>
+
+  			<input type="submit" class="medium button" value="Login!">
+  
+		</form>
+    
+    	<a class="close-reveal-modal">&#215;</a>
+    
+  </div>   
+<!-- End Reveal Modal -->
+  
+<!-- Initialize JS Plugins -->
+  <script src="../javascripts/app.js"></script>
+  
+</body>
+</html>

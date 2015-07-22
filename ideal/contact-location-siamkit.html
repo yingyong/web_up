@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta content="width=1024" name="viewport" content="width=device-width minimum-scale=1, maximum-scale=4">
+
+  <title>ideal physics สถาบันกวดวิชาฟิสิกส์อันดับ 1</title>
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="../css/foundation.min.css">
+  <link rel="stylesheet" href="../css/app.css">
+  <link rel="stylesheet" href="../css/style1.css">
+<link rel="stylesheet" href="../css/color1.css">
+	<link rel="stylesheet" href="../css/idealup.css">
+  
+  <!-- Plugins CSS -->
+  <link href="../plugins/titan/css/jquery.titanlighbox.css" rel="stylesheet" type="text/css">
+     
+  <!-- Google Fonts --> 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+ 
+  <!-- Included JS Files (Compressed) -->
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/foundation.min.js"></script>
+  <script src="../javascripts/modernizr.foundation.js"></script> 
+    
+  <!-- Slider Revolution JS FILES  -->
+  <script type="text/javascript" src="../plugins/slider-revolution/jquery.themepunch.plugins.min.js"></script>
+  <script type="text/javascript" src="../plugins/slider-revolution/jquery.themepunch.revolution.min.js"></script>
+  
+  <!-- Tooltips -->
+  <script type="text/javascript" src="../javascripts/jquery.tipsy.js"></script>
+  
+  <!-- CarouFredSel plugin -->
+  <script type="text/javascript"  src="../javascripts/jquery.carouFredSel-6.0.3-packed.js"></script>
+  <!-- optionally include helper plugins -->
+  <script type="text/javascript"  src="../javascripts/jquery.touchSwipe.min.js"></script>
+  
+  <!-- Titan Lightbox -->
+  <script type="text/javascript" src="../plugins/titan/js/prettify.js"></script>
+  <script type="text/javascript" src="../plugins/titan/js/jquery.titanlighbox.js"></script>
+    
+  <!-- Scripts Initialize -->
+  <script src="../javascripts/app-head.js"></script>
+  <script src="../javascripts/idealup.js"></script>
+  
+  <script>
+  	$(document).ready(function(){
+			moveincontact();
+			
+			
+
+			/*var options = {
+				div: "#menu-icontainer",
+				controls: "#main-imenu",
+				loader: "#loading",
+				x: 150,
+				y: 200,
+				easing: "easeOutBackSmall",
+				easeIn: "easeOutBack",
+				preloadAll: true
+			};
+			
+
+			
+			var menu = new slideMenu(options);*/
+			
+			/*
+				The menu will wait until images are loaded before initializing, see "preloadAll" above.
+				If you want to wait until EVERYTHING on the page is loaded, simply do this:
+				
+				$(window).load(function(){
+					var menu = new slideMenu(options);
+				});
+			*/
+		
+			
+			/*----------------------------------------------------------------------------------
+			 * Demo stuff, not required for menu to work
+			 *---------------------------------------------------------------------------------*/
+			//var auto = false, x, inc;
+			
+			
+		
+			
+				
+		});
+  </script>
+  
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+<!-- Region 1 Wrap -->
+
+  <div class="container region1wrap">  
+         
+    <!-- Top Header -->
+  	<div class="row top_header">
+    
+    	<div id="frame-imenu">
+        	<div id="imenu">
+            	<div id="top-imenu">
+                	<ul>
+                    	<li class="idealup-active"><a href="../index.php">ideal</a></li>
+                        <li class="private-menu"><a href="../private/idealprivate.html">ideal Private</a></li>
+                        <li class="ch-menu"><a href="../channel/index_channel.html" target="_parent">ideal Channel</a></li>
+                        <li class="guru-menu"><a href="../guru/index_guru.html">ideal Guru</a></li>
+                    </ul>
+                </div>
+                <div id="main-imenu">
+                	<ul id="idealup-sub1-active">
+                    	<li><a href="course.html" target="_self"><span>C</span>OURSE</a></li>
+                        <li><a href="club.html" target="_parent"><span>C</span>LUB</a></li>
+                        <li class="current1"><a href="contact.html"><span>C</span>ONTACT</a></li>
+                    </ul>
+                    <ul id="idealup-sub1-no-active">
+                    	<li><a href="#" data-reveal-id="Login"><span>B</span>OOKING</a></li>
+                        <li><a href="../private/idealprivate-system.html"><span>S</span>YSTEM</a></li>
+                        <li><a href="../private/idealprivate-physics.html"><span>P</span>HYSICS</a></li>
+                        <li><a href="../private/idealprivate-english.html"><span>E</span>NGLISH</a></li>
+                        <li><a href="../private/idealprivate-biology.html"><span>B</span>IOLOGY</a></li>
+                    </ul>
+                    <ul id="idealup-sub1-no-active">
+                    	<li>i<span>S</span>AY</li>
+                        <li><a href="channel/idealchannel-q-a.html"><span>Q</span>&amp;A</a></li>
+                        <li><span>I</span>NTERVIEW</li>
+                        <li><span>H</span>OT CLIP</li>
+                    </ul>
+                    <ul id="idealup-sub1-no-active">
+                    	<li><span>H</span>OW TO</li>
+                        <li><a href="../guru/index_guru.html"><span>L</span>OG IN</a></li>
+                        <li><a href="../guru/signup.html"><span>S</span>IGN UP</a></li>
+                    </ul>
+                </div>
+                <div id="i-social">
+                	<ul class="top_isocial">
+                        <li><a class="has-tipsy" href="https://www.facebook.com/idealfanpage" title="facebook" target="_blank"><img src="../images/stories/icon-social/facebook.png" alt="facebook"></a></li>
+                        <li><a class="has-tipsy" href="https://twitter.com/idealphysics" title="twitter"><img src="../images/stories/icon-social/twitter.png" alt="twitter"></a></li>
+                        <li><a class="has-tipsy" href="http://www.youtube.com/user/ideallike" title="youtube"><img src="../images/stories/icon-social/youtube.png" alt="youtube"></a></li>
+                        <li><a class="has-tipsy" href="#" title="email"><img src="../images/stories/icon-social/email.png" alt="email"></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="iconbox">
+                    <div class="icon_wide">
+                       <!-- <div style="margin-top:50px;" class="icon_container" id="product_course">
+                            <a href="#"><img src="../images/stories/icon-course/dvd.png"></a>
+                            <a href="#"><img src="../images/stories/icon-course/live.png"></a>
+                            <a href="#"><img src="../images/stories/icon-course/course-private.png"></a>
+                            <a href="#"><img src="../images/stories/icon-course/plus.png"></a>
+                        </div>-->
+                        <div class="icon_container" id="product_club">
+                            <!--<a class="text_head1" href="#">COURSE</a>-->
+                            <a class="text_head1" href="contact.html"><img src="../images/stories/icon-contact/contact.png"></a>
+                            <a class="dvd_icon" href="contact-location.html"><img src="../images/stories/icon-contact/contact-location_active.png"></a>
+                            <a class="live_icon" href="contact-comment.html"><img src="../images/stories/icon-contact/contact-comment.png"></a>
+                            <a class="private_icon" href="contact-careers.html"><img src="../images/stories/icon-contact/contact-careers.png"></a>
+                            <!--<a class="plus_icon" href="#"><img src="../images/stories/icon-course/plus.png"></a>-->
+                        </div>
+                    </div>
+            </div>
+            
+            
+        </div>
+        
+        
+    	<div id="i-logo" class="i-logo-inside">
+        	<img src="../images/template/i-logo.png" title="idealup" >
+        </div>
+        <!--<div class="six columns">
+        
+    				<ul class="link-list">
+  						<li><a href="#">Order Now</a></li>
+  						<li><a href="#">Pricing</a></li>
+  						<li><a href="#">Site Map</a></li>
+					</ul> 
+  			
+  				
+    				<div class="login">
+            			<a href="#" class="button" data-reveal-id="Login">Login</a>
+            		</div>
+
+
+   	    </div>
+        
+        <div class="six columns">
+        
+        	<ul class="top_social">
+  				<li><a class="has-tipsy" href="http://twitter.com/" title="Twitter"><img src="images/social/Twitter.png" alt="Twitter"></a></li>
+  				<li><a class="has-tipsy" href="http://www.facebook.com/" title="Facebook"><img src="images/social/Facebook.png" alt="Facebook"></a>
+  				<li><a class="has-tipsy" href="http://google.com/" title="Google"><img src="images/social/Google.png" alt="Google+"></a></li>
+                <li><a class="has-tipsy" href="http://www.linkedin.com/" title="LinkedIn"><img src="images/social/LinkedIn.png" alt="LinkedIn"></a></li>
+                <li><a class="has-tipsy" href="http://www.flickr.com/" title="Flickr"><img src="images/social/Flickr.png" alt="Flickr"></a></li>
+                <li><a class="has-tipsy" href="http://vimeo.com/" title="Vimeo"><img src="images/social/Vimeo.png" alt="Vimeo"></a></li>
+  				<li><a class="has-tipsy" href="http://www.rss.com/" title="RSS"><img src="images/social/RSS.png" alt="RSS"></a></li>
+			</ul>
+
+		</div>-->
+    
+  	</div>
+    <!-- End Top Header -->
+    
+  </div>
+  
+<!-- End Region 1 Wrap -->
+
+<!-- Region 2 Wrap -->
+
+<!--<div class="container region2wrap">
+  
+	<div class="row">
+    
+    	
+            
+    	<div class="three columns">
+
+        	<a href="index-2.html" id="logo"><h1>Touch<span>M</span></h1></a>
+        
+  		</div>
+        
+       
+        
+        
+        
+        <div class="nine columns">
+
+			<nav class="top-bar">
+        
+    			<ul>
+      				
+      				<li class="name">
+        			<h1><a href="#"> Please select your page</a></h1>
+      				</li>
+      				<li class="toggle-topbar"><a href="#"></a></li>
+                    
+    			</ul>
+
+
+
+      			<section>
+      			<ul class="right">
+        
+        			<li class="has-dropdown">
+          				<a class="active" href="index-2.html">Home</a>
+          				<ul class="dropdown">
+            				<li><a href="index-2.html">Home Page - Default</a></li>
+            				<li><a href="index-type1.html">Home Page Type 1</a></li>
+                            <li><a href="index-type2.html">Home Page Type 2</a></li>
+                            <li class="has-dropdown"><a href="#">TouchM Sliders</a>
+                            	<ul class="dropdown">
+            						<li><a href="index-2.html">Slider Revolution</a></li>
+            						<li><a href="index-flexi.html">Flexislider</a></li>
+                                    <li><a href="index-camera.html">Camera Slider</a></li>
+                                </ul>
+                            </li>
+          				</ul>
+        			</li>
+        
+        			<li class="has-dropdown">
+        				<a  href="#">Features</a>
+            			<ul class="dropdown">
+            				<li><a href="about.html">About Us</a></li>
+            				<li><a href="services.html">Services</a></li>
+            				<li><a href="pricing.html">Pricing Tables</a></li>
+            				<li><a href="shortcodes.html">Shortcodes</a></li>
+            				<li><a href="notfound.html">404 Not Found</a></li>
+            				<li><a href="under-construction.html">Under Construction</a></li>
+            				<li class="has-dropdown"><a href="#">Third Navigation Level</a>
+            					<ul class="dropdown">
+            						<li><a href="#">This is a simple example</a></li>
+            						<li><a href="#">Of the Third Level</a></li>
+               					</ul>
+            				</li>
+            			</ul>        
+        			</li>
+        
+        			<li class="has-dropdown">
+          				<a href="#">Blog</a>
+          					<ul class="dropdown">
+                            	<li><a href="blog_sidebar_right.html">Blog Default</a></li>
+                            	<li><a href="blog_type1.html">Blog Type 1</a></li>
+                                <li><a href="blog_type2.html">Blog Type 2</a></li>         
+            					<li><a href="blog_sidebar_right.html">Sidebar Right</a></li>
+            					<li><a href="blog_sidebar_left.html">Sidebar Left</a></li>
+            					<li><a href="blog_inner.html">Single Post</a></li>
+          					</ul>
+        			</li>
+        
+        			<li class="has-dropdown">
+          				<a href="#">Portfolio</a>
+          					<ul class="dropdown">             
+            					<li><a href="portfolio_default.html">Portfolio Default (4 Columns)</a></li>         
+            					<li><a href="portfolio_type1.html" class="">Portfolio 2 Columns</a></li>
+            					<li><a href="portfolio_type2.html">Portfolio 3 Columns</a></li> 
+                                <li><a href="portfolio_default.html">Portfolio 4 Columns</a></li>            
+            					<li><a href="single-project.html">Single Project</a></li>
+          					</ul>
+        			</li>
+        
+        			<li><a href="contact.html">Contact</a></li>
+        
+      			</ul>
+                </section>
+
+  			</nav>            
+        
+    	</div>
+        
+              
+        
+	</div>
+    
+</div>-->
+  
+<!-- End Region 2 Wrap -->
+
+<!-- Region 3 Wrap -->
+
+<div class="container region3wrap course">  
+	<div class="row">
+    	<div class="onecol">
+        	<h3 class="headpage-ideal">Location >> สาขา สยามกิตติ์</h3>
+    		<!--<img src="../images/stories/comingsoon.png">-->
+            
+            <table id="location_table" width="100%" border="0" cellspacing="5" cellpadding="5">
+              <tr>
+                <td>
+                	<table id="location1_table" width="100%" border="0" cellspacing="5" cellpadding="5">
+                    	<tr>
+                        	<td>
+                            	<ul class="branch">
+                                    <li><a href="#" data-reveal-id="branch-siamkit">สาขา สยามกิตติ์</a></li>
+                                    <li>สาขา บางกะปิ</li>
+                                    <li>สาขา วงเวียนใหญ่</li>
+                                    <li>สาขา สามเสน</li>
+                                    <li>สาขา งามวงศ์วาน</li>
+                                    <li>สาขา พญาไท</li>
+                                    <li>สาขา ชลบุรี</li>
+                                    <li>สาขา สุพรรณบุรี</li>
+                                    <li>สาขา เชียงใหม่</li>
+                                    <li>สาขา พิษณุโลก</li>
+                                    <li>สาขา ลำปาง</li>
+                                    <li>สาขา ขอนแก่น</li>
+                                    <li>สาขา อุดรธานี</li>
+                                    <li>สาขา โคราช</li>
+                                    <li>สาขา บุรีรัมย์</li>
+                                    <li>สาขา หาดใหญ่</li>
+                                    <li>สาขา ภูเก็ต</li>
+                                    <li>สาขา ตรัง</li>
+                                </ul>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="td_center" align="center">
+               		<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msid=216948602025511857402.0004db02bd8c0847b4974&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=13.727379,100.495779&amp;spn=0.002084,0.003213&amp;z=18&amp;iwloc=0004db02bf5d84f3e4fe4&amp;output=embed"></iframe><br /><small>ดู <a href="https://maps.google.com/maps/ms?msid=216948602025511857402.0004db02bd8c0847b4974&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=13.727379,100.495779&amp;spn=0.002084,0.003213&amp;z=18&amp;iwloc=0004db02bf5d84f3e4fe4&amp;source=embed" style="color:#0000FF;text-align:left">idealphysics</a> ในแผนที่ขนาดใหญ่กว่า</small>
+                    
+                    <div class="pic_branch">
+                    	<div class="thumb_branch"><a href="#" data-reveal-id="pic_siamkit1"><img width="150" src="../images/stories/idealup/branch/siamkit/pic_245.jpg"></a></div>
+                        <div class="thumb_branch"><a href="#" data-reveal-id="pic_siamkit2"><img width="150" src="../images/stories/idealup/branch/siamkit/pic_251.jpg"></a></div>
+                        <div class="thumb_branch"><a href="#" data-reveal-id="pic_siamkit3"><img width="150" src="../images/stories/idealup/branch/siamkit/pic_260.jpg"></a></div>
+                        <div class="thumb_branch"><a href="#" data-reveal-id="pic_siamkit4"><img width="150" src="../images/stories/idealup/branch/siamkit/pic_280.jpg"></a></div>
+                    </div>
+                    
+                </td>
+              </tr>
+            </table>
+
+            
+            
+
+        </div>    
+    </div>
+</div>
+  
+<!-- End Region 3 Wrap -->
+
+
+
+<!-- Region 9 Wrap -->
+
+  <div class="container region9wrap">
+  
+  	 <!-- Bottom Content -->
+    
+    <!-- End Bottom Content -->
+    
+    <!-- Footer -->  
+  	<div class="row footer">
+        
+        <!-- // // // // // // // // // // -->
+        
+        <div class="four columns">
+        
+        	<!--<img style="float:left" src="images/stories/banner-bottom/b001.png">-->
+
+   	    </div>
+        
+        <!-- // // // // // // // // // // -->
+        
+        <div class="four columns center">
+        
+        	<!--<img src="images/stories/banner-bottom/b002.png">-->
+
+   	    </div>
+        
+        <!-- // // // // // // // // // // -->
+        
+        <div class="four columns">
+        
+            <!--<img src="images/stories/banner-bottom/b003.png">-->
+
+   	    </div>
+        
+        <!-- // // // // // // // // // // -->
+        
+  	</div>
+    <!-- End Footer -->
+    
+  </div>
+  
+<!-- End Region 9 Wrap -->
+
+
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="javascripts/jquery.js"></script>
+  
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="javascripts/jquery.placeholder.js"></script>
+  
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  
+  -->
+  
+<!-- Back To Top -->
+  <a href="#" class="scrollup">Scroll</a>
+<!-- End Back To Top -->
+  
+<!-- Reveal Modal --> 
+  <div id="pic_siamkit1" class="reveal-modal login-modal">
+    	<img src="../images/stories/idealup/branch/siamkit/pic_245.jpg">
+    	
+    
+    	<a class="close-reveal-modal">&#215;</a>
+    
+  </div>   
+<!-- End Reveal Modal -->
+
+<!-- Reveal Modal --> 
+  <div id="pic_siamkit2" class="reveal-modal login-modal">
+    	<img src="../images/stories/idealup/branch/siamkit/pic_251.jpg">    
+    	<a class="close-reveal-modal">&#215;</a>
+    
+  </div>   
+<!-- End Reveal Modal -->
+
+<!-- Reveal Modal --> 
+  <div id="pic_siamkit3" class="reveal-modal login-modal">
+    	<img src="../images/stories/idealup/branch/siamkit/pic_260.jpg">    
+    	<a class="close-reveal-modal">&#215;</a>
+    
+  </div>   
+<!-- End Reveal Modal -->
+
+<!-- Reveal Modal --> 
+  <div id="pic_siamkit4" class="reveal-modal login-modal">
+    	<img src="../images/stories/idealup/branch/siamkit/pic_280.jpg">    
+    	<a class="close-reveal-modal">&#215;</a>
+    
+  </div>   
+<!-- End Reveal Modal -->
+  
+<!-- Initialize JS Plugins -->
+  <script src="../javascripts/app.js"></script>
+  
+</body>
+</html>

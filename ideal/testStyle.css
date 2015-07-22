@@ -1,0 +1,21 @@
+#gvSearch {
+	border-color: #999999;
+	border-style: solid;
+	width: 100%;
+}
+#trSearch {
+	background-color: #FF9933;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+#scrolldiv {
+	overflow:auto;
+    height:350px;
+}
+.evenSheetrow {
+	background-color: #DFDFDF;
+}
+.oddSheetrow {
+	background-color: #EFEFEF;
+}

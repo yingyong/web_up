@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta content="width=1024" name="viewport" content="width=device-width minimum-scale=1, maximum-scale=4">
+
+  <title>ideal physics สถาบันกวดวิชาฟิสิกส์อันดับ 1</title>
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="../css/foundation.min.css">
+  <link rel="stylesheet" href="../css/app.css">
+  <link rel="stylesheet" href="../css/style1.css">
+<link rel="stylesheet" href="../css/color1.css">
+	<link rel="stylesheet" href="../css/idealup.css">
+  
+  <!-- Plugins CSS -->
+  <link href="../plugins/titan/css/jquery.titanlighbox.css" rel="stylesheet" type="text/css">
+     
+  <!-- Google Fonts --> 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+ 
+  <!-- Included JS Files (Compressed) -->
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/foundation.min.js"></script>
+  <script src="javascripts/modernizr.foundation.js"></script> 
+    
+  <!-- Slider Revolution JS FILES  -->
+  <script type="text/javascript" src="../plugins/slider-revolution/jquery.themepunch.plugins.min.js"></script>
+  <script type="text/javascript" src="../plugins/slider-revolution/jquery.themepunch.revolution.min.js"></script>
+  
+  <!-- Tooltips -->
+  <script type="text/javascript" src="../javascripts/jquery.tipsy.js"></script>
+  
+  <!-- CarouFredSel plugin -->
+  <script type="text/javascript"  src="../javascripts/jquery.carouFredSel-6.0.3-packed.js"></script>
+  <!-- optionally include helper plugins -->
+  <script type="text/javascript"  src="../javascripts/jquery.touchSwipe.min.js"></script>
+  
+  <!-- Titan Lightbox -->
+  <script type="text/javascript" src="../plugins/titan/js/prettify.js"></script>
+  <script type="text/javascript" src="../plugins/titan/js/jquery.titanlighbox.js"></script>
+    
+  <!-- Scripts Initialize -->
+	<script src="../javascripts/app-head.js"></script> 
+	<script src="../javascripts/slideMenu.js"></script>
+	<script src="../javascripts/slideMenu.min.js"></script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			
+			/**
+			 * MENU OPTIONS (default values in parenthesis)
+			 * ------------
+			 * div:        Where the slide-menu will go. ("#menu-container")
+			 * controls:   Where are the controls for the menu. ("#menu-controls")
+			 * loader:     If you are using a loading graphic, the menu will hide it for you once loaded. If not,
+			 *               set it to 'false' or ''. (false)
+			 * x:          Total width of list item including margins and padding in px. (150)
+			 * y:          Total height of list item including margins and padding in px. (150)
+			 * start:      Index of <ul> to open first. (0)
+			 * speed:      Speed of all animations in ms . (300)
+			 * delay:      Delay between list item animations when transitioning in ms. (60)
+			 * easing:     Type of easing to use for list item animations, use '' for no easing effect. ('')
+			 *               FYI - "easeOutBackSmall" is a custom addition I made for this demo, it is not included in the
+			 *               standard set of easing animations.
+			 * easeIn:     Type of easing to use for initial drop-in animation, use '' for none. ('')
+			 *               This demo includes the jQuery easing plugin: http://gsgd.co.uk/sandbox/jquery/easing/
+			 *               Supported easing methods in the plugin are listed and demoed at the above url.
+			 * preloadAll: Wait for all menu images to load before animating in, or just the first set? (false)
+			 *               By default, with this set to false, the menu will wait until all images in the first menu set are
+			 *               loaded before the beginning animation is fired. If set to true, it will wait for all menu images to load.
+			 */
+		
+			var options = {
+				div: "#menu-icontainer",
+				controls: "#main-imenu",
+				loader: "#loading",
+				x: 150,
+				y: 200,
+				easing: "easeOutBackSmall",
+				easeIn: "easeOutBack",
+				preloadAll: true
+			};
+			
+
+			
+			var menu = new slideMenu(options);
+			
+			/*
+				The menu will wait until images are loaded before initializing, see "preloadAll" above.
+				If you want to wait until EVERYTHING on the page is loaded, simply do this:
+				
+				$(window).load(function(){
+					var menu = new slideMenu(options);
+				});
+			*/
+		
+			
+			/*----------------------------------------------------------------------------------
+			 * Demo stuff, not required for menu to work
+			 *---------------------------------------------------------------------------------*/
+			var auto = false, x, inc;
+			
+			// Toggle x-ray
+			$("#xray a").click(function(){
+				toggle_xray();
+				return false;
+			});
+			
+			// Toggle auto
+			$("#auto a").click(function(){
+				toggle_auto();
+				return false;
+			});
+		
+			// If xray enabled on load, make it so!
+			if (window.location.hash.substring(1) == 'xray') toggle_xray();
+		
+			function toggle_xray(){
+				$(options.div).toggleClass("xray");
+				$("#xray span").text($(options.div).hasClass("xray") ? 'ON' : 'OFF');
+				window.location.hash = $(options.div).hasClass("xray") ? 'xray' : '';
+			}
+			
+			function toggle_auto(){
+				if (auto === false){
+					x = $("#main-imenu a.active").data("target");
+					auto_advance();
+					inc = setInterval(auto_advance, 3000);
+					auto = true;
+				}
+				else{
+					clearInterval(inc);
+					auto = false;
+				}
+				$("#auto span").text(auto === true ? 'ON' : 'OFF');
+			}
+			
+			function auto_advance(){
+				// Max index is 3, so don't go over
+				x = x < 3 ? x + 1 : 0;
+				// Using the switchTo method, we can advance the menu to a desired index
+				menu.switchTo(x);
+			}
+				
+		});
+		</script>
+
+</head>
+<body>
+<!-- Region 1 Wrap -->
+
+  <div class="container region1wrap">  
+         
+    <!-- Top Header -->
+  	<div class="row top_header">
+    
+    	<div id="frame-imenu">
+        	<div id="imenu">
+            	<div id="top-imenu">
+                	<ul>
+                    	<li class="idealup-active">ideal</li>
+                        <li class="private-menu">ideal Private</li>
+                        <li class="ch-menu"><a href="../channel/index_channel.html" target="_parent">ideal Channel</a></li>
+                        <li class="guru-menu"><a href="../guru/index_guru.html">ideal Guru</a></li>
+                    </ul>
+                </div>
+                <div id="main-imenu">
+                	<ul id="idealup-sub1-active">
+                    	<li><a href="#" data-target="0" class="active"><span>C</span>OURSE</a></li>
+                        <li><a href="#" data-target="1"><span>C</span>LUB</a></li>
+                        <li><a href="#" data-target="1"><span>C</span>ONTACT</a></li>
+                    </ul>
+                    <ul id="idealup-sub1-no-active">
+                    	<li><a href="#" data-reveal-id="Login"><span>B</span>OOKING</a></li>
+                        <li><span>S</span>YSTEM</li>
+                        <li><span>P</span>HYSICS</li>
+                        <li><span>E</span>NGLISH</li>
+                        <li><span>B</span>IOLOGY</li>
+                    </ul>
+                    <ul id="idealup-sub1-no-active">
+                    	<li><a href="../channel/idealchannel-isay.html">i<span>S</span>AY</a></li>
+                        <li><a href="../channel/idealchannel-q-a.html"><span>Q</span>&amp;A</a></li>
+                        <li><a href="../channel/idealchannel-interview.html"><span>I</span>NTERVIEW</a></li>
+                        <li><a href="../channel/idealchannel-hotclip.html"><span>H</span>OT CLIP</a></li>
+                    </ul>
+                    <ul id="idealup-sub1-no-active">
+                    	<li><span>H</span>OW TO</li>
+                        <li><a href="../guru/index_guru.html"><span>L</span>OG IN</a></li>
+                        <li><a href="../guru/signup.html"><span>S</span>IGN UP</a></li>
+                    </ul>
+                </div>
+                <div id="i-social">
+                	<ul class="top_isocial">
+                        <li><a class="has-tipsy" href="https://www.facebook.com/idealfanpage" title="facebook" target="_blank"><img src="../images/stories/icon-social/facebook.png" alt="facebook"></a></li>
+                        <li><a class="has-tipsy" href="https://twitter.com/idealphysics" title="twitter"><img src="../images/stories/icon-social/twitter.png" alt="twitter"></a></li>
+                        <li><a class="has-tipsy" href="http://www.youtube.com/user/ideallike" title="youtube"><img src="../images/stories/icon-social/youtube.png" alt="youtube"></a></li>
+                        <li><a class="has-tipsy" href="#" title="email"><img src="../images/stories/icon-social/email.png" alt="email"></a></li>
+                    </ul>
+                </div>
+                
+               
+                
+            </div>
+            
+             <div id="icon-subimenu">
+                <div id="menu-icontainer">
+                	<div id="loading"></div>
+                    <ul>
+                    	<li><h3>COURSE</h3></li>
+                    	<li id="up-live"><img src="../images/stories/icon-course/live.png"></li>
+                        <li><img src="../images/stories/icon-course/dvd.png"></li>
+                        <li><img src="../images/stories/icon-course/course-private.png"></li>
+                        <li><img src="../images/stories/icon-course/plus.png"></li>
+                    </ul>
+                    <ul>
+                    	<li><h3>CLUB</h3></li>
+                    	<li><img src="../images/stories/icon-course/live.png"></li>
+                        <li><img src="../images/stories/icon-course/dvd.png"></li>
+                        <li><img src="../images/stories/icon-course/course-private.png"></li>
+                        <li><img src="../images/stories/icon-course/plus.png"></li>
+                    </ul>
+                    <ul>
+                    	<!--<li><h3>COURSE</h3></li>-->
+                    	<li><img src="../images/stories/icon-course/live.png"></li>
+                        <li><img src="../images/stories/icon-course/dvd.png"></li>
+                        <li><img src="../images/stories/icon-course/course-private.png"></li>
+                        <li><img src="../images/stories/icon-course/plus.png"></li>
+                    </ul>
+                    <ul>
+                    	<!--<li><h3>COURSE</h3></li>-->
+                    	<li><img src="../images/stories/icon-course/live.png"></li>
+                        <li><img src="../images/stories/icon-course/dvd.png"></li>
+                        <li><img src="../images/stories/icon-course/course-private.png"></li>
+                        <li><img src="../images/stories/icon-course/plus.png"></li>
+                    </ul>
+                    
+                </div>
+                
+               <!-- <div id="menu-controls">
+                    <a href="#" data-target="0" class="active">LIVE</a>
+                    <a href="#" data-target="1">DVD</a>
+                    <a href="#" data-target="2">PRIVATE</a>
+                    <a href="#" data-target="3">Meeting &amp; Event</a>
+                </div>-->
+			</div>
+            
+        </div>
+    	<div id="i-logo">
+        	<img src="../images/template/i-logo.png" title="idealup" >
+        </div>
+        <!--<div class="six columns">
+        
+    				<ul class="link-list">
+  						<li><a href="#">Order Now</a></li>
+  						<li><a href="#">Pricing</a></li>
+  						<li><a href="#">Site Map</a></li>
+					</ul> 
+  			
+  				
+    				<div class="login">
+            			<a href="#" class="button" data-reveal-id="Login">Login</a>
+            		</div>
+
+
+   	    </div>
+        
+        <div class="six columns">
+        
+        	<ul class="top_social">
+  				<li><a class="has-tipsy" href="http://twitter.com/" title="Twitter"><img src="images/social/Twitter.png" alt="Twitter"></a></li>
+  				<li><a class="has-tipsy" href="http://www.facebook.com/" title="Facebook"><img src="images/social/Facebook.png" alt="Facebook"></a>
+  				<li><a class="has-tipsy" href="http://google.com/" title="Google"><img src="images/social/Google.png" alt="Google+"></a></li>
+                <li><a class="has-tipsy" href="http://www.linkedin.com/" title="LinkedIn"><img src="images/social/LinkedIn.png" alt="LinkedIn"></a></li>
+                <li><a class="has-tipsy" href="http://www.flickr.com/" title="Flickr"><img src="images/social/Flickr.png" alt="Flickr"></a></li>
+                <li><a class="has-tipsy" href="http://vimeo.com/" title="Vimeo"><img src="images/social/Vimeo.png" alt="Vimeo"></a></li>
+  				<li><a class="has-tipsy" href="http://www.rss.com/" title="RSS"><img src="images/social/RSS.png" alt="RSS"></a></li>
+			</ul>
+
+		</div>-->
+    
+  	</div>
+    <!-- End Top Header -->
+    
+  </div>
+  
+<!-- End Region 1 Wrap -->
+
+<!-- Region 2 Wrap -->
+
+<!--<div class="container region2wrap">
+  
+	<div class="row">
+    
+    	
+            
+    	<div class="three columns">
+
+        	<a href="index-2.html" id="logo"><h1>Touch<span>M</span></h1></a>
+        
+  		</div>
+        
+       
+        
+        
+        
+        <div class="nine columns">
+
+			<nav class="top-bar">
+        
+    			<ul>
+      				
+      				<li class="name">
+        			<h1><a href="#"> Please select your page</a></h1>
+      				</li>
+      				<li class="toggle-topbar"><a href="#"></a></li>
+                    
+    			</ul>
+
+
+
+      			<section>
+      			<ul class="right">
+        
+        			<li class="has-dropdown">
+          				<a class="active" href="index-2.html">Home</a>
+          				<ul class="dropdown">
+            				<li><a href="index-2.html">Home Page - Default</a></li>
+            				<li><a href="index-type1.html">Home Page Type 1</a></li>
+                            <li><a href="index-type2.html">Home Page Type 2</a></li>
+                            <li class="has-dropdown"><a href="#">TouchM Sliders</a>
+                            	<ul class="dropdown">
+            						<li><a href="index-2.html">Slider Revolution</a></li>
+            						<li><a href="index-flexi.html">Flexislider</a></li>
+                                    <li><a href="index-camera.html">Camera Slider</a></li>
+                                </ul>
+                            </li>
+          				</ul>
+        			</li>
+        
+        			<li class="has-dropdown">
+        				<a  href="#">Features</a>
+            			<ul class="dropdown">
+            				<li><a href="about.html">About Us</a></li>
+            				<li><a href="services.html">Services</a></li>
+            				<li><a href="pricing.html">Pricing Tables</a></li>
+            				<li><a href="shortcodes.html">Shortcodes</a></li>
+            				<li><a href="notfound.html">404 Not Found</a></li>
+            				<li><a href="under-construction.html">Under Construction</a></li>
+            				<li class="has-dropdown"><a href="#">Third Navigation Level</a>
+            					<ul class="dropdown">
+            						<li><a href="#">This is a simple example</a></li>
+            						<li><a href="#">Of the Third Level</a></li>
+               					</ul>
+            				</li>
+            			</ul>        
+        			</li>
+        
+        			<li class="has-dropdown">
+          				<a href="#">Blog</a>
+          					<ul class="dropdown">
+                            	<li><a href="blog_sidebar_right.html">Blog Default</a></li>
+                            	<li><a href="blog_type1.html">Blog Type 1</a></li>
+                                <li><a href="blog_type2.html">Blog Type 2</a></li>         
+            					<li><a href="blog_sidebar_right.html">Sidebar Right</a></li>
+            					<li><a href="blog_sidebar_left.html">Sidebar Left</a></li>
+            					<li><a href="blog_inner.html">Single Post</a></li>
+          					</ul>
+        			</li>
+        
+        			<li class="has-dropdown">
+          				<a href="#">Portfolio</a>
+          					<ul class="dropdown">             
+            					<li><a href="portfolio_default.html">Portfolio Default (4 Columns)</a></li>         
+            					<li><a href="portfolio_type1.html" class="">Portfolio 2 Columns</a></li>
+            					<li><a href="portfolio_type2.html">Portfolio 3 Columns</a></li> 
+                                <li><a href="portfolio_default.html">Portfolio 4 Columns</a></li>            
+            					<li><a href="single-project.html">Single Project</a></li>
+          					</ul>
+        			</li>
+        
+        			<li><a href="contact.html">Contact</a></li>
+        
+      			</ul>
+                </section>
+
+  			</nav>            
+        
+    	</div>
+        
+              
+        
+	</div>
+    
+</div>-->
+  
+<!-- End Region 2 Wrap -->
+
+<!-- Region 3 Wrap -->
+
+  <div class="container region3wrap">  
+  
+  	<!-- Main Slider -->  
+			<div class="mainslider-container responsive" >
+					<div class="mainslider">
+						<ul>
+                        	<li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300"  data-thumb="../images/stories/slideshow/slide001_thumb.png" data-delay="9000">
+                            	<img src="../images/stories/slideshow/bg-islide1.png" alt="">
+                                <div class="caption lfr" data-x="500" data-y="80" data-speed="700" data-start="1000" data-easing="easeOutExpo">
+                                	<img src="../images/stories/slideshow/clock.png" alt="">
+                                </div>
+                                <!--<div class="caption lfr" data-x="500" data-y="20" data-speed="700" data-start="1000" data-easing="easeOutExpo">
+                                	<img src="images/sliders/sliderrevolution/slides/slide_image-iphone.png" alt="">
+                                </div>-->
+                                <div class="caption sfl big_orange"  data-x="80" data-y="110" data-speed="700" data-start="2000" data-easing="easeOutExpo">ideal Physics</div>
+                                <div class="caption sfl medium_black"  data-x="80" data-y="160" data-speed="700" data-start="2000" data-easing="easeOutExpo">23 ก.พ.-15 พ.ค.’56</div>
+                                <div class="caption sfl small_grey"  data-x="80" data-y="200" data-speed="700" data-start="2000" data-easing="easeOutExpo">เปิดทำการ 8.00-18.00 น. ทุกวัน</div>
+                                <div class="caption sfb small_red"  data-x="80" data-y="320" data-speed="700" data-start="3000" data-easing="easeOutExpo">(สงกรานต์ หยุด 12-16 เมษา)</div>
+                            </li>
+                            
+                            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300"  data-thumb="../images/sliders/sliderrevolution/thumbs/thumb1.jpg" data-delay="9000">
+                            	<img src="images/stories/slideshow/bg-islide1.png" alt="">
+                                <div class="caption lfl big_orange"  data-x="50" data-y="50" data-speed="700" data-start="1200" data-easing="easeOutExpo">
+                                	<iframe width="500" height="281" src="http://www.youtube.com/embed/oCQ_aqGxDXQ?rel=0" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="caption sfr big_orange" data-x="620" data-y="120" data-speed="700" data-start="2000" data-easing="easeOutExpo">
+                                	ideal Physics
+                                </div>
+                                <div class="caption sfr medium_black" data-x="660" data-y="200" data-speed="700" data-start="2500" data-easing="easeOutExpo">
+                                	VDO PRESENT
+                                </div>
+                            </li>
+
+
+							<!-- SLIDE DOWN -->
+							<!--<li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300"  data-thumb="images/sliders/sliderrevolution/thumbs/thumb1.jpg">
+								<img src="images/sliders/sliderrevolution/slides/slide_image1.jpg"  alt="">
+                                <div class="caption lfr" data-x="560" data-y="20" data-speed="700" data-start="800" data-easing="easeOutExpo"><img src="images/sliders/sliderrevolution/slides/slide_image-ipad.png" alt=""></div>
+                                <div class="caption lfr" data-x="500" data-y="20" data-speed="700" data-start="1000" data-easing="easeOutExpo"><img src="images/sliders/sliderrevolution/slides/slide_image-iphone.png" alt=""></div>
+                                <div class="caption lfl big_white"  data-x="100" data-y="130" data-speed="300" data-start="1200" data-easing="easeOutExpo">Amazing Touch Experience</div>
+                                <div class="caption lfl big_color"  data-x="100" data-y="167" data-speed="300" data-start="1300" data-easing="easeOutExpo">Fully Responsive</div>
+                                <div class="caption lfl medium_grey"  data-x="100" data-y="222" data-speed="300" data-start="1400" data-easing="easeOutExpo">Inventore veritatis et quasi architecto <br/>beatae dicta sed ut perspiciatis unde omnis<br/> iste natus laudantium.</div>
+                                <div class="caption lfb"  data-x="100" data-y="300" data-speed="300" data-start="1500" data-easing="easeOutExpo"><a href="#" class="button">Experience Now</a></div>
+							</li>-->
+                            
+                            <!-- CURTAIN 3 -->
+							<!--<li data-transition="curtain-3" data-slotamount="20"  data-masterspeed="300" data-thumb="images/sliders/sliderrevolution/thumbs/thumb3.jpg">
+								<img src="images/sliders/sliderrevolution/slides/slide_image3.jpg" alt="" >
+                                 <div class="caption lfb" data-x="360" data-y="235" data-speed="900" data-start="700" data-easing="easeOutExpo"><img src="images/sliders/sliderrevolution/slides/hand.png" alt=""></div>
+                                <div class="caption sft big_color"  data-x="460" data-y="120" data-speed="900" data-start="1200" data-easing="easeOutBack">Easy and Fast Customization</div>
+                                <div class="caption sft medium_text black"  data-x="544" data-y="170" data-speed="900" data-start="1300" data-easing="easeOutBack">Buy TouchM on ThemeForest!</div>
+							</li>-->
+
+							<!-- BOXFADE -->
+							<!--<li data-transition="boxfade" data-slotamount="5"  data-masterspeed="300" data-thumb="images/sliders/sliderrevolution/thumbs/thumb2.jpg" >
+								<img src="images/sliders/sliderrevolution/slides/slide_image2.jpg" alt="">
+								<div class="caption lfb big_white"  data-x="400" data-y="80" data-speed="900" data-start="1700" data-easing="easeOutBack">Speed and Precision</div>
+								<div class="caption lft big_color"  data-x="400" data-y="117" data-speed="900" data-start="1900" data-easing="easeOutBack"><em>HTML5 &amp; CSS3</em></div>
+								<div class="caption lfr medium_grey"  data-x="400" data-y="165" data-speed="300" data-start="2500" data-easing="easeOutExpo">Accusantium et doloremque veritatis<br/> architecto eaque ipsa quae ab illo<br/> inventore veritatis perspiciatis.</div>                               
+								<div class="caption sfb" data-x="550" data-y="240" data-speed="1000" data-start="3500" data-easing="easeOutBack"><a href="#" class="button">Wanna Test Drive?</a></div>
+							</li>-->                           
+
+                            <!-- SLIDE LEFT -->
+							<!--<li data-transition="slotslide-horizontal" data-slotamount="10"  data-masterspeed="300"  data-link="http://www.google.de" data-thumb="images/sliders/sliderrevolution/thumbs/thumb4.jpg">
+								<img src="images/sliders/sliderrevolution/slides/slide_image4.jpg" alt=""  >
+                                <div class="caption lft big_white"  data-x="400" data-y="120" data-speed="900" data-start="1200" data-easing="easeOutBack">Modern Premium Theme</div>
+                                <div class="caption lfb" data-x="380" data-y="180" data-speed="900" data-start="1700" data-easing="easeOutBack"><img src="images/sliders/sliderrevolution/slides/icon1.png" alt=""></div>
+                                <div class="caption lfb" data-x="540" data-y="180" data-speed="900" data-start="2000" data-easing="easeOutBack"><img src="images/sliders/sliderrevolution/slides/icon2.png" alt=""></div>
+                                <div class="caption lfb" data-x="690" data-y="180" data-speed="900" data-start="2300" data-easing="easeOutBack"><img src="images/sliders/sliderrevolution/slides/icon3.png" alt=""></div>
+                                <div class="caption lfr medium_grey"  data-x="400" data-y="330" data-speed="300" data-start="2600" data-easing="easeOutExpo">Wanna learn more?</div>
+                                <div class="caption lfr medium_text"  data-x="595" data-y="332" data-speed="300" data-start="2800" data-easing="easeOutExpo"><a href="#">Get in Touch</a></div>
+							</li>-->                            
+                            
+
+						</ul>
+						<div class="tp-bannertimer"></div>
+					</div>
+				</div>
+  
+    <!-- End Main Slider -->
+    
+    <!-- Content Top -->  
+  	<!--<div class="row content_top">
+       
+        
+        
+    	<div class="twelve columns">
+       
+			<h2>We create custom-built, marketing-driven website solutions and online environments that ensure your brand delivers on form and functionality.</h2>
+
+		</div>
+        
+        
+        
+  	</div>-->
+    <!-- End Content Top -->
+    
+  </div>
+  
+<!-- End Region 3 Wrap -->
+
+
+
+<!-- Region 9 Wrap -->
+
+  <div class="container region9wrap">
+  
+  	 <!-- Bottom Content -->
+    
+    <!-- End Bottom Content -->
+    
+    <!-- Footer -->  
+  	<div class="row footer">
+        
+        <!-- // // // // // // // // // // -->
+        
+        <div class="four columns">
+        
+        	<img style="float:left" src="../images/stories/banner-bottom/b001.png">
+
+   	    </div>
+        
+        <!-- // // // // // // // // // // -->
+        
+        <div class="four columns center">
+        
+        	<img src="../images/stories/banner-bottom/b002.png">
+
+   	    </div>
+        
+        <!-- // // // // // // // // // // -->
+        
+        <div class="four columns">
+        
+            <img src="../images/stories/banner-bottom/b003.png">
+
+   	    </div>
+        
+        <!-- // // // // // // // // // // -->
+        
+  	</div>
+    <!-- End Footer -->
+    
+  </div>
+  
+<!-- End Region 9 Wrap -->
+
+
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="javascripts/jquery.js"></script>
+  
+  <script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="javascripts/jquery.placeholder.js"></script>
+  
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="javascripts/jquery.foundation.topbar.js"></script>
+  
+  -->
+  
+<!-- Back To Top -->
+  <a href="#" class="scrollup">Scroll</a>
+<!-- End Back To Top -->
+  
+<!-- Reveal Modal --> 
+  <div id="Login" class="reveal-modal login-modal">
+  
+    <h2>BOOKING</h2>
+    <p>Please login using your credentials recived by email when you register.</p>
+    	<form>
+  			<label>Username</label>  
+  			<input type="text" placeholder="UserName@TouchM.com" />
+  
+  			<label>Password</label>
+  			<input type="text" placeholder="insert password" />
+  
+  			<p class="right"><a href="http://forums.orpalis.com/ucp.php?mode=sendpassword">I forgot my password</a> | <a href="http://forums.orpalis.com/ucp.php?mode=resend_act">Resend activation e-mail</a></p>
+
+  			<input type="submit" class="medium button" value="Login!">
+  
+		</form>
+    
+    	<a class="close-reveal-modal">&#215;</a>
+    
+  </div>   
+<!-- End Reveal Modal -->
+  
+<!-- Initialize JS Plugins -->
+  <script src="../javascripts/app.js"></script>
+  
+</body>
+</html>
