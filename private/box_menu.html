@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta content="width=1024" name="viewport" content="width=device-width minimum-scale=1, maximum-scale=4">
+
+  <title>ideal physics สถาบันกวดวิชาฟิสิกส์อันดับ 1</title>
+  <script>
+  	$(document).ready(function(e) {
+       $('.vdo_box').mouseover(function(){
+			$(this).val();
+			$(this).attr('src','../images/stories/home/vdo_active.png');
+		});
+		
+		$('.vdo_box').mouseout(function(){
+					$(this).val();
+					$(this).attr('src','../images/stories/home/vdo_inactive.png');
+		});
+		
+		$('.booking_box').mouseover(function(){
+					$(this).val();
+					$(this).attr('src','../images/stories/home/booking_active.png');
+		});
+		
+		$('.booking_box').mouseout(function(){
+					$(this).val();
+					$(this).attr('src','../images/stories/home/booking_inactive.png');
+		});
+		
+		$('.guru_box').mouseover(function(){
+					$(this).val();
+					$(this).attr('src','../images/stories/home/guru_active.png');
+		});
+		
+		$('.guru_box').mouseout(function(){
+					$(this).val();
+					$(this).attr('src','../images/stories/home/guru_inactive.png');
+		});
+		
+		$('.regis_box').mouseover(function(){
+					$(this).val();
+					$(this).attr('src','../images/stories/home/regis_active.png');
+		});
+		
+		$('.regis_box').mouseout(function(){
+					$(this).val();
+					$(this).attr('src','../images/stories/home/regis_inactive.png');
+		});
+    });
+  </script>
+  
+</head>
+<body>
+
+           <table width="100%" class="top-icon">
+				<tr>
+                	<td></td>
+                	<td><a href="../channel/idealchannel-sampleclip1.html" target="_blank"><img class="vdo_box" src="../images/stories/home/vdo_inactive.png"/></a></td>
+                    <td><a href="#" data-reveal-id="Login"><img class="booking_box" src="../images/stories/home/booking_inactive.png"/></a></td>
+                    <td><a href="http://idealprivate.com/guru/" target="_blank"><img class="guru_box" src="../images/stories/home/guru_inactive.png"/></a></td>
+                    <td><a href="../ideal_payment/index.php"target="_blank"><img class="regis_box" src="../images/stories/home/regis_inactive.png" /></a></td>
+                </tr>
+    		</table>
+  
+
+
+
+</body>
+</html>
